@@ -12,17 +12,17 @@ export const AnimalList = (props: IProps) => {
       };
     
       return (
-        <>
+        <ul className="animal-items">
           {props.animals.map((animal, i) => (
-            <div key={i}>
+            <li key={i}>
               <img
                 src={animal.imageUrl}
                 alt={animal.latinName}
                 width={100}
                 onError={handleImageError} // Anropas vid laddningsfel för bilden
               />
-            </div>
+            </li>
           ))}
-        </>
+        </ul>
       );
     };
