@@ -14,13 +14,20 @@ export const AnimalList = (props: IProps) => {
       return (
         <ul className="animal-items">
           {props.animals.map((animal, i) => (
-            <li key={i}>
+            <li key={i} className="animal-card">
               <img
                 src={animal.imageUrl}
                 alt={animal.latinName}
                 width={100}
+                height={100}
                 onError={handleImageError} // Anropas vid laddningsfel för bilden
+                className="animal-img"
               />
+              <div>
+                <p className="short-desc">
+                  {animal.shortDescription}
+                </p>
+              </div>
             </li>
           ))}
         </ul>
