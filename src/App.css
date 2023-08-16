@@ -5,7 +5,14 @@
   text-align: center;
 }
 
+body {
+  background-color: #F7D5BB;
+  color: #FDF2E3;
+}
+
 .header-div {
+  width: 90vw;
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
 }
