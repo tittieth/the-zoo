@@ -6,7 +6,7 @@ interface IProps {
 
 export const AnimalList = (props: IProps) => {
     const handleImageError = (event: React.SyntheticEvent<HTMLImageElement, Event>) => {
-        event.currentTarget.src = "/public/244537-P3VK92-904.jpg";
+        event.currentTarget.src = "/244537-P3VK92-904.jpg";
         event.currentTarget.alt = "Bild kunde inte laddas";
         event.currentTarget.width = 100;
       };
