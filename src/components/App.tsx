@@ -3,6 +3,7 @@ import '../App.css';
 import { IAnimal } from '../models/IAnimal';
 import { AnimalList } from './AnimalList';
 import { getAnimals } from '../services/AnimalService';
+import Header from './Header';
 
 function App() {
   const [animals, setAnimals] = useState<IAnimal[]>([]);
@@ -22,6 +23,7 @@ function App() {
   return (
     <>
       <div>
+        <Header />
         <AnimalList animals={animals}/>
       </div>
     </>
