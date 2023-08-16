@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import '../App.css';
 import { IAnimal } from '../models/IAnimal';
+import { AnimalList } from './AnimalList';
 
 function App() {
   const [animals, setAnimals] = useState<IAnimal[]>([
@@ -54,7 +55,7 @@ function App() {
   return (
     <>
       <div>
-        <h1>The Zoo</h1>
+        <AnimalList animals={animals}/>
       </div>
     </>
   );
