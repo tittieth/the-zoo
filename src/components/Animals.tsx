@@ -9,7 +9,6 @@ function Animals() {
   const [animals, setAnimals] = useState<IAnimal[]>([]);
   const [isDataFetched, setIsDataFetched] = useState(false);
 
-
   useEffect(() => {
     const getDataFromAPI = async () => {
       if (!isDataFetched) {
@@ -21,6 +20,8 @@ function Animals() {
 
     getDataFromAPI();
   }, [isDataFetched]);
+
+  
 
   return (
     <>

@@ -2,11 +2,12 @@ import { Link, useParams } from "react-router-dom";
 import { IAnimal } from "../models/IAnimal";
 import { useEffect, useState } from "react";
 import { getAnimalById } from "../services/AnimalService";
+import { formatDateTime } from "../helpers";
 
 export default function Animal() {
   const [animal, setAnimal] = useState<IAnimal>();
 
-  const { id } = useParams<{ id?: string }>();
+  const { id } = useParams<string>();
 
 
   useEffect(() => {
@@ -28,7 +29,7 @@ export default function Animal() {
       <div>Animal: {id}</div>
       <h1>{animal?.name}</h1>
       <p>{animal?.longDescription}</p>
-      <p>{animal?.lastFed}</p>
+      <p>Senast matad: {animal ? formatDateTime(animal.lastFed) : ""}</p>
       <button><Link to="/animals"><img src="/public/icons8-left-64 (1).png" alt="arrow back" className="arrow"></img></Link></button>
     </>
   )
