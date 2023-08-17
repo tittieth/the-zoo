@@ -4,13 +4,10 @@ import { IAnimal } from '../models/IAnimal';
 import { AnimalList } from './AnimalList';
 import { getAnimals } from '../services/AnimalService';
 import Header from './Header';
+import { saveToLocalStorage } from '../helpers';
 
 function Animals() {
   const [animals, setAnimals] = useState<IAnimal[]>([]);
-
-  const saveToLocalStorage = (animals: IAnimal[]) => {
-    localStorage.setItem('animals', JSON.stringify(animals))
-  }
 
   useEffect(() => {
     const animalsFromLS = localStorage.getItem('animals');

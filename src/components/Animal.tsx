@@ -2,7 +2,7 @@ import { Link, useParams } from "react-router-dom";
 import { IAnimal } from "../models/IAnimal";
 import { useEffect, useState } from "react";
 import { getAnimalById } from "../services/AnimalService";
-import { formatDateTime, handleImageError } from "../helpers";
+import { formatDateTime, handleImageError, saveToLocalStorage } from "../helpers";
 
 
 export default function Animal() {
@@ -19,14 +19,43 @@ export default function Animal() {
       }
     };
 
-    if (!animal) getAnimalFromAPI();
-  });
+    if (!animal) {
+      const storedAnimals = JSON.parse(localStorage.getItem("animals") || "[]");
+      const numericId = parseInt(id); // Konvertera id till en siffra
+  
+      const storedAnimal = storedAnimals.find((storedAnimal: IAnimal) => storedAnimal.id === numericId);
+  
+      if (storedAnimal) {
+        setAnimal(storedAnimal);
+      } else {
+        getAnimalFromAPI();
+      }
+    }
+  }, [animal, id]);
 
   console.log(animal);
 
-  const handleClick = () => {
-    
+  const handleImgClick = () => {
+    // Ska kunna se bilden i större format
+    console.log('clicked img');
   }
+
+  const feedAnimal = () => {
+    if (animal) {
+      const updatedAnimal = {
+        ...animal,
+        lastFed: new Date().toISOString()
+      };
+      
+      const updatedAnimals = JSON.parse(localStorage.getItem("animals") || "[]").map((storedAnimal: IAnimal) =>
+        storedAnimal.id === updatedAnimal.id ? updatedAnimal : storedAnimal
+      );
+
+      saveToLocalStorage(updatedAnimals);
+
+      setAnimal(updatedAnimal);
+    }
+  };
   
 
   return (
@@ -38,15 +67,15 @@ export default function Animal() {
             <h1>{animal?.name}</h1>
             <p>{animal?.yearOfBirth}</p>
             <p>Matad: {animal ? formatDateTime(animal.lastFed) : ""}</p>
-            <p>Hungrig: {animal?.isFed}</p>
+            <p>Hungrig: {animal?.isFed ? 'Ja' : 'Nej'}</p>
           </div>
           <div>
-            <img onClick={handleClick} src={animal?.imageUrl} width={130} height={130} className="sml-img" onError={handleImageError}></img>
+            <img onClick={handleImgClick} src={animal?.imageUrl} width={130} height={130} className="sml-img" onError={handleImageError}></img>
           </div>
         </div>
         <div className="animal-desc">
           <p>{animal?.longDescription}</p>
-          <button>Mata mig!</button>
+          <button onClick={feedAnimal}>Mata mig!</button>
         </div>
       </div>
       

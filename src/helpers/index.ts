@@ -1,3 +1,5 @@
+import { IAnimal } from "../models/IAnimal";
+
 export const handleImageError = (event: React.SyntheticEvent<HTMLImageElement, Event>) => {
     event.currentTarget.src = "/244537-P3VK92-904.jpg";
     event.currentTarget.alt = "Bild kunde inte laddas";
@@ -10,3 +12,7 @@ export const formatDateTime = (isoDateTime: string) => {
     const formattedTime = date.toLocaleTimeString("sv-SE");
     return `${formattedDate} ${formattedTime}`;
   };
+
+  export const saveToLocalStorage = (animals: IAnimal[]) => {
+    localStorage.setItem('animals', JSON.stringify(animals))
+  }
