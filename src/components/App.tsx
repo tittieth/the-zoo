@@ -4,6 +4,8 @@ import { IAnimal } from '../models/IAnimal';
 import { AnimalList } from './AnimalList';
 import { getAnimals } from '../services/AnimalService';
 import Header from './Header';
+import { RouterProvider } from 'react-router-dom';
+import { router } from '../Router';
 
 function App() {
   const [animals, setAnimals] = useState<IAnimal[]>([]);
@@ -25,6 +27,7 @@ function App() {
       <div>
         <Header />
         <AnimalList animals={animals}/>
+        <RouterProvider router={router}></RouterProvider>
       </div>
     </>
   );
