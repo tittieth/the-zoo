@@ -65,11 +65,11 @@ export default function Animal() {
       <button><Link to="/animals"><img src="/public/arrow-back.png" height={80} alt="arrow back" className="arrow"></img></Link></button>
       <div className="animal-presentation-wrapper">
         <div className="wrapper">
-          <div>
+          <div className="animal-info">
             <h1>{animal?.name}</h1>
-            <p>{animal?.yearOfBirth}</p>
-            <p>Matad: {animal ? formatDateTime(animal.lastFed) : ""}</p>
-            <p>Hungrig: {animal?.isFed ? 'Ja' : 'Nej'}</p>
+            <p>Född: {animal?.yearOfBirth}
+            <br />Matad: {animal ? formatDateTime(animal.lastFed) : ""}
+            <br />Hungrig: {animal?.isFed ? 'Ja' : 'Nej'}</p>
           </div>
           <div>
             <img onClick={handleImgClick} src={animal?.imageUrl} width={130} height={130} className="sml-img" onError={handleImageError}></img>
@@ -77,7 +77,7 @@ export default function Animal() {
         </div>
         <div className="animal-desc">
           <p>{animal?.longDescription}</p>
-          <button onClick={feedAnimal} disabled={isFed}>{ isFed ? 'Fått mat' : 'Mata mig!'}</button>
+          <button className="feed-btn" onClick={feedAnimal} disabled={isFed}>{ isFed ? 'Fått mat' : 'Mata mig!'}</button>
         </div>
       </div>
       

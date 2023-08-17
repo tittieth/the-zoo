@@ -73,6 +73,7 @@ a {
 .wrapper {
   display: flex;
   align-items: center;
+  justify-content: space-around;
 }
 
 .sml-img {
@@ -85,4 +86,16 @@ a {
   color: black;
   font-size: 0.8 rem;
   padding: 10px;
+}
+
+.animal-info {
+  text-align: left;
+}
+
+.feed-btn {
+  background-color: #EDA77F;
+  color: #FDF2E3;
+  padding: 15px 25px;
+  border-radius: 10px;
+  margin: 20px 0;
 }
