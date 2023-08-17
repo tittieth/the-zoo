@@ -1,16 +1,12 @@
 import { Link } from "react-router-dom";
 import { IAnimal } from "../models/IAnimal"
+import { handleImageError } from "../helpers";
 
 interface IProps {
     animals: IAnimal[];
 }
 
 export const AnimalList = (props: IProps) => {
-    const handleImageError = (event: React.SyntheticEvent<HTMLImageElement, Event>) => {
-        event.currentTarget.src = "/244537-P3VK92-904.jpg";
-        event.currentTarget.alt = "Bild kunde inte laddas";
-        event.currentTarget.width = 100;
-      };
     
       return (
         <ul className="animal-items">

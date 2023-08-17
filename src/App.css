@@ -50,11 +50,39 @@ body {
 }
 
 .arrow {
-  padding: 0;
-  margin: 0;
+  position: relative;
+  margin-right: 0;
 }
 
 button {
   padding: 0;
   border: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.animal-presentation-wrapper {
+  background-color: #EDA77F;
+  border-radius: 20px;
+  width: 50%;
+  margin: auto;
+}
+
+.wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.sml-img {
+  border-radius: 50%;
+}
+
+.animal-desc {
+  background-color: #FDF2E3;
+  border-radius: 20px;
+  color: black;
+  font-size: 0.8 rem;
+  padding: 10px;
 }
