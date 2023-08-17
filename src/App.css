@@ -48,3 +48,13 @@ body {
   margin-top: 10px;
   margin-bottom: -25px;
 }
+
+.arrow {
+  padding: 0;
+  margin: 0;
+}
+
+button {
+  padding: 0;
+  border: none;
+}
