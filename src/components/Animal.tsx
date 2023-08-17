@@ -7,6 +7,7 @@ import { formatDateTime, handleImageError, saveToLocalStorage } from "../helpers
 
 export default function Animal() {
   const [animal, setAnimal] = useState<IAnimal>();
+  const [isFed, setIsFed] = useState<boolean>(false);
 
   const { id } = useParams<string>();
 
@@ -54,6 +55,7 @@ export default function Animal() {
       saveToLocalStorage(updatedAnimals);
 
       setAnimal(updatedAnimal);
+      setIsFed(true);
     }
   };
   
@@ -75,7 +77,7 @@ export default function Animal() {
         </div>
         <div className="animal-desc">
           <p>{animal?.longDescription}</p>
-          <button onClick={feedAnimal}>Mata mig!</button>
+          <button onClick={feedAnimal} disabled={isFed}>{ isFed ? 'Fått mat' : 'Mata mig!'}</button>
         </div>
       </div>
       
