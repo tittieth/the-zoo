@@ -26,11 +26,13 @@ export default function Animal() {
 
   return (
     <>
+      <button><Link to="/animals"><img src="/public/icons8-left-64 (1).png" alt="arrow back" className="arrow"></img></Link></button>
       <div>Animal: {id}</div>
       <h1>{animal?.name}</h1>
       <p>{animal?.longDescription}</p>
       <p>Senast matad: {animal ? formatDateTime(animal.lastFed) : ""}</p>
-      <button><Link to="/animals"><img src="/public/icons8-left-64 (1).png" alt="arrow back" className="arrow"></img></Link></button>
+      <button>Mata mig!</button>
+      
     </>
   )
 }
