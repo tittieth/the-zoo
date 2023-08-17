@@ -7,18 +7,20 @@ import Header from './Header';
 
 function Animals() {
   const [animals, setAnimals] = useState<IAnimal[]>([]);
+  const [isDataFetched, setIsDataFetched] = useState(false);
 
 
   useEffect(() => {
-    const getDataFromAPi = async () => {
-      const response = await getAnimals();
-      setAnimals(response)
-      console.log(response);
-      
-    }
-    getDataFromAPi();
-    
-  }, [])
+    const getDataFromAPI = async () => {
+      if (!isDataFetched) {
+        const response = await getAnimals();
+        setAnimals(response);
+        setIsDataFetched(true);
+      }
+    };
+
+    getDataFromAPI();
+  }, [isDataFetched]);
 
   return (
     <>

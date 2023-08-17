@@ -8,7 +8,7 @@ export const getAnimals = async (): Promise<IAnimal[]> => {
     return response.data;
   };
   
-  export const getAnimalById = async (id: number): Promise<IAnimal> => {
+  export const getAnimalById = async (id: string): Promise<IAnimal> => {
     const response = await axios.get<IAnimal>(`${BASE_URL}/${id}`);
     return response.data;
   };
