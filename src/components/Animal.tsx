@@ -7,7 +7,6 @@ import { formatDateTime, handleImageError, saveToLocalStorage } from "../helpers
 
 export default function Animal() {
   const [animal, setAnimal] = useState<IAnimal>();
-  const [isFed, setIsFed] = useState<boolean>(false);
 
   const { id } = useParams<string>();
 
@@ -20,7 +19,6 @@ export default function Animal() {
       }
     };
 
-    if (!animal) {
       const storedAnimals = JSON.parse(localStorage.getItem("animals") || "[]");
       const numericId = parseInt(id); // Konvertera id till en siffra
   
@@ -31,7 +29,7 @@ export default function Animal() {
       } else {
         getAnimalFromAPI();
       }
-    }
+    
   }, [animal, id]);
 
   console.log(animal);
@@ -45,7 +43,8 @@ export default function Animal() {
     if (animal) {
       const updatedAnimal = {
         ...animal,
-        lastFed: new Date().toISOString()
+        lastFed: new Date().toISOString(),
+        isFed: true
       };
       
       const updatedAnimals = JSON.parse(localStorage.getItem("animals") || "[]").map((storedAnimal: IAnimal) =>
@@ -55,7 +54,6 @@ export default function Animal() {
       saveToLocalStorage(updatedAnimals);
 
       setAnimal(updatedAnimal);
-      setIsFed(true);
     }
   };
   
@@ -69,7 +67,7 @@ export default function Animal() {
             <h1>{animal?.name}</h1>
             <p>Född: {animal?.yearOfBirth}
             <br />Matad: {animal ? formatDateTime(animal.lastFed) : ""}
-            <br />Hungrig: {animal?.isFed ? 'Ja' : 'Nej'}</p>
+            <br />Hungrig: {animal?.isFed ? 'Nej' : 'Ja'}</p>
           </div>
           <div>
             <img onClick={handleImgClick} src={animal?.imageUrl} width={130} height={130} className="sml-img" onError={handleImageError}></img>
@@ -77,7 +75,7 @@ export default function Animal() {
         </div>
         <div className="animal-desc">
           <p>{animal?.longDescription}</p>
-          <button className="feed-btn" onClick={feedAnimal} disabled={isFed}>{ isFed ? 'Fått mat' : 'Mata mig!'}</button>
+          <button className="feed-btn" onClick={feedAnimal} disabled={animal?.isFed}>{ animal?.isFed ? 'Fått mat' : 'Mata mig!'}</button>
         </div>
       </div>
       
