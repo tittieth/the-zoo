@@ -26,13 +26,12 @@ export default function Animal() {
   
       if (storedAnimal) {
         setAnimal(storedAnimal);
+
       } else {
         getAnimalFromAPI();
       }
     
-  }, [animal, id]);
-
-  console.log(animal);
+  }, [id]);
 
   const handleImgClick = () => {
     // Ska kunna se bilden i större format

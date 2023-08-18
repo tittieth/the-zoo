@@ -22,6 +22,7 @@ export const AnimalList = (props: IProps) => {
                   className="animal-img"
                 />
                 <h2>{animal.name}</h2>
+                <p>{animal.isFed ? 'Mätt' : 'Jag är hungrig'}</p>
                 <div>
                   <p className="short-desc">
                     {animal.shortDescription}
