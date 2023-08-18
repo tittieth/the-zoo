@@ -19,6 +19,19 @@ export const saveToLocalStorage = (animals: IAnimal[]) => {
   localStorage.setItem('animals', JSON.stringify(animals));
 };
 
-export const calculateTimeSinceLastFed = (animals: IAnimal[]) => {
-    
-};
+// export const calculateTimeSinceLastFed = (animal: IAnimal) => {
+
+//     const currentTime = new Date();
+
+//     const updatedAnimals = animals.map((animal: IAnimal) => {
+//       const lastTimeFed = new Date(animal.lastFed);
+//       const timeDifference = (currentTime - lastTimeFed) / (1000 * 60 * 60);
+      
+//       return {
+//         ...animal,
+//         isFed: timeDifference <= 3
+//       };
+//     });
+  
+//     return updatedAnimals;
+//   };

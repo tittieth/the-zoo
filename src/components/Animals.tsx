@@ -22,7 +22,7 @@ function Animals() {
         };
         getDataFromAPI();
       }
-  }, []);
+  }, []);  
 
   return (
     <>

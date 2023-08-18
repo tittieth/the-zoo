@@ -3,6 +3,7 @@ import { IAnimal } from "../models/IAnimal";
 import { useEffect, useState } from "react";
 import { getAnimalById } from "../services/AnimalService";
 import { formatDateTime, handleImageError, saveToLocalStorage } from "../helpers";
+import { format } from "date-fns";
 
 
 export default function Animal() {
@@ -26,12 +27,13 @@ export default function Animal() {
   
       if (storedAnimal) {
         setAnimal(storedAnimal);
-
       } else {
         getAnimalFromAPI();
       }
     
   }, [id]);
+
+  console.log(animal);
 
   const handleImgClick = () => {
     // Ska kunna se bilden i större format
@@ -40,15 +42,21 @@ export default function Animal() {
 
   const feedAnimal = () => {
     if (animal) {
+      const currentTime = new Date();
+      const formattedTime = format(currentTime, "yyyy-MM-dd HH:mm:ss");
+      
       const updatedAnimal = {
         ...animal,
-        lastFed: new Date().toISOString(),
+        lastFed: formattedTime,
         isFed: true
       };
       
       const updatedAnimals = JSON.parse(localStorage.getItem("animals") || "[]").map((storedAnimal: IAnimal) =>
         storedAnimal.id === updatedAnimal.id ? updatedAnimal : storedAnimal
       );
+
+      console.log(updatedAnimals);
+      
 
       saveToLocalStorage(updatedAnimals);
 
