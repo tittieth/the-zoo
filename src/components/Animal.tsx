@@ -63,7 +63,6 @@ export default function Animal() {
       setAnimal(updatedAnimal);
     }
   };
-  
 
   return (
     <>

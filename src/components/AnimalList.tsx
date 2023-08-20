@@ -18,7 +18,7 @@ export const AnimalList = (props: IProps) => {
                   alt={animal.latinName}
                   width={100}
                   height={100}
-                  onError={handleImageError} // Anropas vid laddningsfel för bilden
+                  onError={handleImageError}
                   className="animal-img"
                 />
                 <h2>{animal.name}</h2>

@@ -6,7 +6,8 @@ import Animal from "./components/Animal";
 export const router = createBrowserRouter([
     {
         path: "/",
-        element: <Home></Home>
+        element: <Home></Home>,
+        index: true
     },
     {
         path: "/animals",
