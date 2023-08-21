@@ -6,8 +6,7 @@ interface IProps {
     animals: IAnimal[];
 }
 
-export const AnimalList = (props: IProps) => {
-    
+export const AnimalList = (props: IProps) => { 
       return (
         <ul className="animal-items">
           {props.animals.map((animal, i) => (
@@ -20,6 +19,7 @@ export const AnimalList = (props: IProps) => {
                   height={100}
                   onError={handleImageError}
                   className="animal-img"
+                  loading="lazy"
                 />
                 <h2>{animal.name}</h2>
                 {/* <p>{animal.isFed ? 'Mätt' : 'Jag är hungrig'}</p> */}

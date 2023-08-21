@@ -69,36 +69,14 @@ export default function Animal() {
       );
 
       console.log(updatedAnimals);
-      
-
       saveToLocalStorage(updatedAnimals);
-
       setAnimal(updatedAnimal);
     }
   };
 
   return (
     <>
-      <AnimalCard animal={animal} feedAnimal={feedAnimal} handleImgClick={handleImgClick}></AnimalCard>
-      {/* <button><Link to="/animals"><img src="/public/arrow-back.png" height={80} alt="arrow back" className="arrow"></img></Link></button>
-      <div className="animal-presentation-wrapper">
-        <div className="wrapper">
-          <div className="animal-info">
-            <h1>{animal?.name}</h1>
-            <p>Född: {animal?.yearOfBirth}
-            <br />Matad: {animal ? formatDateTime(animal.lastFed) : ""}
-            <br />Hungrig: {animal?.isFed ? 'Nej' : 'Ja'}</p>
-          </div>
-          <div>
-            <img onClick={handleImgClick} src={animal?.imageUrl} width={130} height={130} className="sml-img" onError={handleImageError}></img>
-          </div>
-        </div>
-        <div className="animal-desc">
-          <p>{animal?.longDescription}</p>
-          <button className="feed-btn" onClick={feedAnimal} disabled={animal?.isFed}>{ animal?.isFed ? 'Fått mat' : 'Mata mig!'}</button>
-        </div>
-      </div> */}
-      
+      <AnimalCard animal={animal} feedAnimal={feedAnimal} handleImgClick={handleImgClick}></AnimalCard>   
     </>
   )
 }
