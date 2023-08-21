@@ -32,6 +32,10 @@ body {
   border-radius: 10px;
 }
 
+.hungry {
+  animation: blink 1s infinite; /* Använd din valda tidsperiod */
+}
+
 .short-desc {
   font-size: 0.5rem;
   background-color: #FDF2E3;
@@ -39,7 +43,8 @@ body {
   border-radius: 10px;
   padding: 10px 10px;
   min-height: 65px;
-  margin-top: -10px;
+
+  margin-bottom: 5px;
 }
 
 .animal-img {
@@ -97,4 +102,34 @@ a {
   padding: 15px 25px;
   border-radius: 10px;
   margin: 20px 0;
+}
+
+@keyframes blink {
+  0% {
+    background-color: red;
+  }
+  50% {
+    background-color: #EDA77F; 
+  }
+  100% {
+    background-color: red;
+  }
+}
+
+.feeding-info {
+  border: 3px solid black;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  font-size: 0.8rem;
+
+}
+
+.feeding-info ul {
+  list-style: none;
+}
+
+.feeding-info h2 {
+  font-size: 0.8rem;
 }

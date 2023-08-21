@@ -30,11 +30,11 @@ export const updateIsFedStatus = (animals: IAnimal[]) => {
       );
 
       if (timeDifferenceInSeconds >= 50) {
-        return { ...animal, isFed: false, hungerLevel: "Jag är döende" };
+        return { ...animal, isFed: false, hungerLevel: "Håller på att dö" };
       } else if (timeDifferenceInSeconds >= 30) {
-        return { ...animal, isFed: false, hungerLevel: "jag är hungrig" };
+        return { ...animal, isFed: false, hungerLevel: "Behöver mat" };
       } else {
-        return { ...animal, isFed: true, hungerLevel: "jag är mätt" };
+        return { ...animal, isFed: true, hungerLevel: "Mätt" };
       }
     }
     return animal;

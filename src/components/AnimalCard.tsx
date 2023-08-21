@@ -18,7 +18,7 @@ export const AnimalCard = (props: IProps) => {
             <h1>{props.animal?.name}</h1>
             <p>Född: {props.animal?.yearOfBirth}
             <br />Matad: {props.animal ? formatDateTime(props.animal.lastFed) : ""}
-            <br />Hungrig: {props.animal?.isFed ? 'Nej' : 'Ja'}</p>
+            <br />Status: {props.animal?.hungerLevel}</p>
             </div>
             <div>
             <img onClick={props.handleImgClick} src={props.animal?.imageUrl} width={130} height={130} className="sml-img" onError={handleImageError} loading="lazy"></img>

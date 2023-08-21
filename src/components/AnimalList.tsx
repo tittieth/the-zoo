@@ -10,7 +10,7 @@ export const AnimalList = (props: IProps) => {
       return (
         <ul className="animal-items">
           {props.animals.map((animal, i) => (
-            <li key={i} className="animal-card">
+            <li key={i} className={`animal-card ${animal.hungerLevel === "Håller på att dö" ? "hungry" : ""}`}>
               <Link to={"/animal/" + animal.id}>
                 <img
                   src={animal.imageUrl}
@@ -22,8 +22,7 @@ export const AnimalList = (props: IProps) => {
                   loading="lazy"
                 />
                 <h2>{animal.name}</h2>
-                {/* <p>{animal.isFed ? 'Mätt' : 'Jag är hungrig'}</p> */}
-                <p>{animal?.hungerLevel}</p>
+                <p>{animal.isFed ? '' : animal.hungerLevel}</p>
                 <div>
                   <p className="short-desc">
                     {animal.shortDescription}

@@ -61,7 +61,7 @@ export default function Animal() {
         ...animal,
         lastFed: formattedTime,
         isFed: true,
-        hungerLevel: "jag är mätt"
+        hungerLevel: "Mätt"
       };
       
       const updatedAnimals = JSON.parse(localStorage.getItem("animals") || "[]").map((storedAnimal: IAnimal) =>
