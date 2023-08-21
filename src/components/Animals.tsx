@@ -14,30 +14,21 @@ function Animals() {
 
     if (animalsFromLS) {
       const parsedAnimals = JSON.parse(animalsFromLS);
-      // const updatedAnimals = updateIsFedStatus(parsedAnimals);
+      const updatedAnimals = updateIsFedStatus(parsedAnimals);
 
-      setAnimals(parsedAnimals);
-      saveToLocalStorage(parsedAnimals);
+      setAnimals(updatedAnimals);
+      saveToLocalStorage(updatedAnimals);
     } else {
         const getDataFromAPI = async () => {
           const response = await getAnimals();
-          setAnimals(response);
-          saveToLocalStorage(response);
+          const updatedAnimals = updateIsFedStatus(response)
+
+          setAnimals(updatedAnimals);
+          saveToLocalStorage(updatedAnimals);
         };
         getDataFromAPI();
       }
   }, []);  
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      const updatedAnimals = updateIsFedStatus(animals)
-
-      setAnimals(updatedAnimals);
-      saveToLocalStorage(updatedAnimals);
-    }, 1000); 
-
-    return () => clearInterval(interval);
-  }, [animals]);
 
   console.log(animals);
   
