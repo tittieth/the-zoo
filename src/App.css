@@ -98,6 +98,7 @@ a:active {
 
 .sml-img {
   border-radius: 50%;
+  padding: 20px 10px;
 }
 
 .animal-desc {
@@ -110,6 +111,7 @@ a:active {
 
 .animal-info {
   text-align: left;
+  padding: 0 10px;
 }
 
 .animal-info h1 {

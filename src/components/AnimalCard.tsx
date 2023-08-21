@@ -15,7 +15,7 @@ export const AnimalCard = (props: IProps) => {
         <Link to="/animals" className="test2">
           <img
             src="/public/arrow-back.png"
-            height={80}
+            height={100}
             alt="arrow back"
             className="arrow"
           ></img>
@@ -37,8 +37,8 @@ export const AnimalCard = (props: IProps) => {
             <img
               onClick={props.handleImgClick}
               src={props.animal?.imageUrl}
-              width={130}
-              height={130}
+              width={150}
+              height={150}
               className="sml-img"
               onError={handleImageError}
               loading="lazy"
