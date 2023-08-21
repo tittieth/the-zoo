@@ -1,34 +1,46 @@
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { IAnimal } from "../models/IAnimal";
 import { useEffect, useState } from "react";
 import { getAnimalById } from "../services/AnimalService";
-import { formatDateTime, handleImageError, saveToLocalStorage } from "../helpers";
+import {  saveToLocalStorage } from "../helpers";
 import { format } from "date-fns";
+import { AnimalCard } from "./AnimalCard";
 
 
 export default function Animal() {
-  const [animal, setAnimal] = useState<IAnimal>();
-
+  const [animal, setAnimal] = useState<IAnimal | undefined>();
   const { id } = useParams<string>();
+
+  const getAnimalFromAPI = async (id: string) => {
+    try {
+      const response = await getAnimalById(id);
+      setAnimal(response);
+    } catch (error) {
+      console.log("Error fetching:", error);
+    }
+  };
+  
+
+  const getAnimalFromLS = (numericId: number) => {
+    const storedAnimals = JSON.parse(localStorage.getItem("animals") || "[]");
+    return storedAnimals.find((storedAnimal: IAnimal) => storedAnimal.id === numericId);
+  };
 
 
   useEffect(() => {
-    const getAnimalFromAPI = async () => {
-      if (id) {
-        const response = await getAnimalById(id);
-        setAnimal(response);
-      }
-    };
 
-      const storedAnimals = JSON.parse(localStorage.getItem("animals") || "[]");
       const numericId = parseInt(id); // Konvertera id till en siffra
   
-      const storedAnimal = storedAnimals.find((storedAnimal: IAnimal) => storedAnimal.id === numericId);
+      const storedAnimal = getAnimalFromLS(numericId)
   
       if (storedAnimal) {
         setAnimal(storedAnimal);
-      } else {
-        getAnimalFromAPI();
+      } else if (id) {
+        try {
+          getAnimalFromAPI(id);
+        } catch (error) {
+          console.error("Error fetching animal from API:", error);
+        }
       }
     
   }, [id]);
@@ -48,7 +60,8 @@ export default function Animal() {
       const updatedAnimal = {
         ...animal,
         lastFed: formattedTime,
-        isFed: true
+        isFed: true,
+        hungerLevel: "jag är mätt"
       };
       
       const updatedAnimals = JSON.parse(localStorage.getItem("animals") || "[]").map((storedAnimal: IAnimal) =>
@@ -66,7 +79,8 @@ export default function Animal() {
 
   return (
     <>
-      <button><Link to="/animals"><img src="/public/arrow-back.png" height={80} alt="arrow back" className="arrow"></img></Link></button>
+      <AnimalCard animal={animal} feedAnimal={feedAnimal} handleImgClick={handleImgClick}></AnimalCard>
+      {/* <button><Link to="/animals"><img src="/public/arrow-back.png" height={80} alt="arrow back" className="arrow"></img></Link></button>
       <div className="animal-presentation-wrapper">
         <div className="wrapper">
           <div className="animal-info">
@@ -83,7 +97,7 @@ export default function Animal() {
           <p>{animal?.longDescription}</p>
           <button className="feed-btn" onClick={feedAnimal} disabled={animal?.isFed}>{ animal?.isFed ? 'Fått mat' : 'Mata mig!'}</button>
         </div>
-      </div>
+      </div> */}
       
     </>
   )

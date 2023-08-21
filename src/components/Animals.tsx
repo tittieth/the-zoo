@@ -39,7 +39,7 @@ function Animals() {
     return () => clearInterval(interval);
   }, [animals]);
 
-  // console.log(animals);
+  console.log(animals);
   
 
   return (

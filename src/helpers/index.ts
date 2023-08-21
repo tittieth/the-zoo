@@ -23,14 +23,18 @@ export const updateIsFedStatus = (animals: IAnimal[]) => {
   const currentTime = new Date();
 
  return animals.map((animal) => {
-    if (animal.isFed) {
+    if (animal) {
       const lastFedTime = new Date(animal.lastFed);
       const timeDifferenceInSeconds = Math.floor(
         (currentTime.getTime() - lastFedTime.getTime()) / 1000
       );
 
-      if (timeDifferenceInSeconds >= 30) {
-        return { ...animal, isFed: false };
+      if (timeDifferenceInSeconds >= 50) {
+        return { ...animal, isFed: false, hungerLevel: "Jag är döende" };
+      } else if (timeDifferenceInSeconds >= 30) {
+        return { ...animal, isFed: false, hungerLevel: "jag är hungrig" };
+      } else {
+        return { ...animal, isFed: true, hungerLevel: "jag är mätt" };
       }
     }
     return animal;
