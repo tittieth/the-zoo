@@ -26,31 +26,32 @@ body {
 
 .animal-card {
   background-color: #EDA77F;
-  max-width: 200px;
+  max-width: 240px;
   padding: 5px;
   margin: 5px;
   border-radius: 10px;
 }
 
 .hungry {
-  animation: blink 1s infinite; /* Använd din valda tidsperiod */
+  animation: blink 1s infinite; 
 }
 
 .short-desc {
-  font-size: 0.5rem;
+  align-items: center;
+  text-align: center;
+  font-size: 0.8rem;
   background-color: #FDF2E3;
   color: black;
   border-radius: 10px;
-  padding: 10px 10px;
-  min-height: 65px;
-
-  margin-bottom: 5px;
+  padding: 10px;
+  margin: 10px;
+  min-height: 120px;
 }
 
 .animal-img {
   border-radius: 50%;
-  margin-top: 10px;
-  margin-bottom: -25px;
+  margin-top: 15px;
+  margin-bottom: -15px;
 }
 
 .arrow {
@@ -63,14 +64,29 @@ button {
   border: none;
 }
 
-a {
+a:link {
+  text-decoration: none;
+  /* transition: transform 0.2s; */
+}
+
+a:visited {
+  text-decoration: none;
+  color: #FDF2E3;
+}
+
+a:hover {
+  text-decoration: none;
+  transform: scale(1.1);
+}
+
+a:active {
   text-decoration: none;
 }
 
 .animal-presentation-wrapper {
   background-color: #EDA77F;
   border-radius: 20px;
-  width: 50%;
+  max-width: 500px;
   margin: auto;
 }
 
@@ -88,12 +104,16 @@ a {
   background-color: #FDF2E3;
   border-radius: 20px;
   color: black;
-  font-size: 0.8 rem;
-  padding: 10px;
+  font-size: 1 rem;
+  padding: 20px 30px;
 }
 
 .animal-info {
   text-align: left;
+}
+
+.animal-info h1 {
+  font-size: 2rem;
 }
 
 .feed-btn {
@@ -102,6 +122,15 @@ a {
   padding: 15px 25px;
   border-radius: 10px;
   margin: 20px 0;
+}
+
+.button-wrapper {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.test2 {
+  text-decoration: none;
 }
 
 @keyframes blink {
@@ -116,20 +145,3 @@ a {
   }
 }
 
-.feeding-info {
-  border: 3px solid black;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  font-size: 0.8rem;
-
-}
-
-.feeding-info ul {
-  list-style: none;
-}
-
-.feeding-info h2 {
-  font-size: 0.8rem;
-}

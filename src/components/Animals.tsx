@@ -18,6 +18,8 @@ function Animals() {
 
       setAnimals(updatedAnimals);
       saveToLocalStorage(updatedAnimals);
+      console.log("hämtar från ls");
+      
     } else {
         const getDataFromAPI = async () => {
           const response = await getAnimals();
@@ -25,6 +27,8 @@ function Animals() {
 
           setAnimals(updatedAnimals);
           saveToLocalStorage(updatedAnimals);
+          console.log('hämtar från api');
+          
         };
         getDataFromAPI();
       }
