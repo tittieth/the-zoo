@@ -1,20 +1,26 @@
 #root {
-  max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
   text-align: center;
 }
 
 body {
   background-color: #F7D5BB;
   color: #FDF2E3;
+  font-family: 'Roboto', sans-serif;
 }
 
 .header-div {
   width: 90vw;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 40px;
+  font-size: clamp(1rem, 2vw, 3rem);
+}
+
+.header-div h1, .firstpage-wrapper h1 {
+  font-family: 'Just Another Hand', cursive;;
 }
 
 .animal-items {
@@ -62,6 +68,13 @@ body {
 button {
   padding: 0;
   border: none;
+}
+
+button:disabled,
+button[disabled]{
+  border: 1px solid #999999;
+  background-color: #dbb6bd;
+  color: #666666;
 }
 
 a:link {
@@ -131,8 +144,44 @@ a:active {
   justify-content: flex-end;
 }
 
-.test2 {
-  text-decoration: none;
+.firstpage-wrapper {
+  position: relative;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: space-around;
+  font-size: clamp(1rem, 3vw, 5rem);
+}
+
+.start-btn {
+  background-color: #EDA77F;
+  color: #FDF2E3;
+  padding: 25px 45px;
+  margin: 20px;
+  border-radius: 20px;
+  max-width: 200px;
+  margin-top: 150px;
+  font-size: clamp(1rem, 1rem + 1vw, 2rem);
+
+}
+
+.circle {
+  position: relative;
+  background-image: url("/public/wepik-export-20230822073930mV82.png");
+  background-position: center; 
+  background-repeat: no-repeat; 
+  background-size: cover; 
+  margin: 0;
+  width: 100%;
+  height: 75vh;
+  margin-top: 100px;
+  margin-bottom: 0;
+  animation: slideIn 1s forwards; 
+}
+
+.cat-icon {
+  margin-bottom: -25px;
 }
 
 @keyframes blink {
@@ -144,6 +193,15 @@ a:active {
   }
   100% {
     background-color: red;
+  }
+}
+
+@keyframes slideIn {
+  0% {
+    bottom: -100%; /* Startposition */
+  }
+  100% {
+    bottom: 0; /* Slutposition (visas helt) */
   }
 }
 
