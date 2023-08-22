@@ -15,6 +15,8 @@ function Animals() {
     if (animalsFromLS) {
       const parsedAnimals = JSON.parse(animalsFromLS);
       const updatedAnimals = updateIsFedStatus(parsedAnimals);
+      console.log(updatedAnimals);
+      
 
       setAnimals(updatedAnimals);
       saveToLocalStorage(updatedAnimals);
@@ -23,6 +25,8 @@ function Animals() {
         const getDataFromAPI = async () => {
           const response = await getAnimals();
           const updatedAnimals = updateIsFedStatus(response)
+          console.log(updatedAnimals);
+          
 
           setAnimals(updatedAnimals);
           saveToLocalStorage(updatedAnimals);    
@@ -30,6 +34,9 @@ function Animals() {
         getDataFromAPI();
       }
   }, []);  
+
+  console.log(animals);
+  
 
   return (
     <>

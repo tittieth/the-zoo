@@ -9,8 +9,8 @@ interface IProps {
 export const AnimalList = (props: IProps) => { 
       return (
         <ul className="animal-items">
-          {props.animals.map((animal, i) => (
-            <li key={i} className={`animal-card ${animal.hungerLevel === "Håller på att dö" ? "hungry" : ""}`}>
+          {props.animals.map((animal) => (
+            <li key={animal.id} className={`animal-card ${animal.hungerLevel === "Håller på att dö" ? "hungry" : ""}`}>
               <Link to={"/animal/" + animal.id} className="test">
                 <p>{animal.isFed ? '' : animal.hungerLevel}</p>
                 <img
