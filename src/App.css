@@ -21,7 +21,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-content: space-around;
-  font-size: clamp(1rem, 3vw, 5rem);
+  font-size: clamp(1rem, 2vw, 4rem);
   margin-top: 20px;
 }
 
@@ -30,7 +30,7 @@ body {
 }
 
 .start-wrapper {
-  height: 20vh;
+  height: 30vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -40,11 +40,16 @@ body {
 .start-btn {
   background-color: #EDA77F;
   color: #FDF2E3;
-  padding: 20px 35px;
+  padding: 15px 45px;
   margin: 10px;
   border-radius: 20px;
   max-width: 100px;
-  font-size: clamp(1rem, 1rem + 1vw, 2rem);
+  font-size: clamp(1rem, 1rem + 0.3rem, 1.3rem);
+
+}
+
+.background-img-wrapper {
+  margin-top: 10px;
 }
 
 .background-img {
@@ -53,7 +58,7 @@ body {
   background-repeat: no-repeat; 
   background-size: cover; 
   margin: 0;
-  height: 65vh;
+  height: 700px;
   margin-top: 20px;
   margin-bottom: 0;
 }
@@ -83,13 +88,12 @@ body {
 .short-desc {
   align-items: center;
   text-align: center;
-  font-size: 0.8rem;
   background-color: #FDF2E3;
   color: black;
   border-radius: 10px;
   padding: 10px;
   margin: 10px;
-  min-height: 120px;
+  min-height: 150px;
 }
 
 .animal-img {
@@ -103,6 +107,7 @@ body {
   flex-direction: row;
   flex-wrap: wrap;
   list-style-type: none;
+  justify-content: center;
 }
 
 .arrow {

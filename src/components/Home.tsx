@@ -14,7 +14,8 @@ export default function Home() {
             <h1>The Zoo</h1>
             <Link to="/animals" className="start-btn">Start</Link>
           </div>
-          <div className="background-img">
+          <div className="background-img-wrapper">
+            <div className="background-img"></div>
           </div>
         </div>
     </>
