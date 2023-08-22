@@ -45,8 +45,6 @@ export default function Animal() {
     
   }, [id]);
 
-  console.log(animal);
-
   const handleImgClick = () => {
     // Ska kunna se bilden i större format
     console.log('clicked img');
@@ -68,7 +66,6 @@ export default function Animal() {
         storedAnimal.id === updatedAnimal.id ? updatedAnimal : storedAnimal
       );
 
-      console.log(updatedAnimals);
       saveToLocalStorage(updatedAnimals);
       setAnimal(updatedAnimal);
     }

@@ -18,7 +18,6 @@ function Animals() {
 
       setAnimals(updatedAnimals);
       saveToLocalStorage(updatedAnimals);
-      console.log("hämtar från ls");
       
     } else {
         const getDataFromAPI = async () => {
@@ -26,16 +25,11 @@ function Animals() {
           const updatedAnimals = updateIsFedStatus(response)
 
           setAnimals(updatedAnimals);
-          saveToLocalStorage(updatedAnimals);
-          console.log('hämtar från api');
-          
+          saveToLocalStorage(updatedAnimals);    
         };
         getDataFromAPI();
       }
   }, []);  
-
-  console.log(animals);
-  
 
   return (
     <>
