@@ -12,7 +12,7 @@ export const AnimalCard = (props: IProps) => {
   return (
     <>
       <div className="button-wrapper">
-        <Link to="/animals" className="test2">
+        <Link to="/animals">
           <img
             src="/public/arrow-back.png"
             height={100}

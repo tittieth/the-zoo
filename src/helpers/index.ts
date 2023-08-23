@@ -31,8 +31,6 @@ export const updateIsFedStatus = (animals: IAnimal[]) => {
         (currentTime.getTime() - lastFedTime.getTime()) / (1000 * 60 *60)
       );
 
-      console.log(`Animal: ${animal.name}, Time Difference: ${timeDifferenceInHours} hours`);
-
       if (timeDifferenceInHours >= 4) {
         return { ...animal, isFed: false, hungerLevel: "Håller på att dö" };
       } else if (timeDifferenceInHours >= 3) {
