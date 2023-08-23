@@ -3,9 +3,11 @@ import { IAnimal } from '../models/IAnimal';
 export const handleImageError = (
   event: React.SyntheticEvent<HTMLImageElement, Event>,
 ) => {
+  const maxWidth = '500px'; 
+
   event.currentTarget.src = '/244537-P3VK92-904.jpg';
   event.currentTarget.alt = 'Bilden kunde inte laddas';
-  event.currentTarget.width = 100;
+  event.currentTarget.style.maxWidth = maxWidth;
 };
 
 export const formatDateTime = (isoDateTime: string) => {

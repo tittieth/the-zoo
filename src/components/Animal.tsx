@@ -5,9 +5,11 @@ import { getAnimalById } from '../services/AnimalService';
 import { saveToLocalStorage } from '../helpers';
 import { format } from 'date-fns';
 import { AnimalCard } from './AnimalCard';
+import { ModalImage } from './ModalImage';
 
 export default function Animal() {
   const [animal, setAnimal] = useState<IAnimal | undefined>();
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const { id } = useParams<string>();
 
   const getAnimalFromAPI = async (id: string) => {
@@ -46,6 +48,7 @@ export default function Animal() {
   const handleImgClick = () => {
     // Ska kunna se bilden i större format
     console.log('clicked img');
+    setIsModalOpen(true);
   };
 
   const feedAnimal = () => {
@@ -78,6 +81,12 @@ export default function Animal() {
         feedAnimal={feedAnimal}
         handleImgClick={handleImgClick}
       ></AnimalCard>
+      {animal && isModalOpen && (
+        <ModalImage
+          imageSrc={animal.imageUrl} 
+          onClose={() => setIsModalOpen(false)}
+        />
+      )}
     </>
   );
 }

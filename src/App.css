@@ -116,6 +116,7 @@ body {
 button {
   padding: 0;
   border: none;
+  cursor: pointer;
 }
 
 button:disabled,
@@ -135,7 +136,7 @@ a:visited {
   color: #FDF2E3;
 }
 
-a:hover {
+a:hover, button:hover {
   text-decoration: none;
   transform: scale(1.1);
 }
@@ -160,6 +161,7 @@ a:active {
 .sml-img {
   border-radius: 50%;
   padding: 20px 10px;
+  cursor: pointer;
 }
 
 .animal-desc {
@@ -196,6 +198,57 @@ a:active {
 .cat-icon {
   margin-bottom: -25px;
 }
+
+/* Modal.css */
+
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 60%;
+  height: 60%;
+  transform: translate(-50%, -50%); /* Centrera horisontellt och vertikalt */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-content img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.modal-content button {
+  margin-top: 10px;
+  background-color: #dbb6bd;
+  border: none;
+  padding: 2px 16px;
+  border-radius: 10px;
+  cursor: pointer;
+  max-width: 250px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+}
+
+/* Exempel på hur du kan stylea den större bilden i AnimalCard */
+.animal-img-large {
+  max-width: 50%;
+  max-height: 50vh;
+  object-fit: contain;
+}
+
 
 @keyframes blink {
   0% {
