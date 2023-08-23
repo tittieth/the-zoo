@@ -10,7 +10,7 @@ export const ModalImage = (props: IModalProps) => {
     <div className="modal">
         <div className="modal-content">
             <img src={props.imageSrc} alt="Larger image of the animal" onError={handleImageError}/>
-            <button onClick={props.onClose}><img width="50" height="50" src="https://img.icons8.com/plasticine/100/x.png" alt="x"/></button>
+            <button onClick={props.onClose}><img width="50" height="50" src="/public/icons8-x-100.png" alt="x"/></button>
         </div>
     </div>
   )

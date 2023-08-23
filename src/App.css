@@ -1,6 +1,6 @@
 body {
-  background-color: #F7D5BB;
-  color: #FDF2E3;
+  background-color: #FFE8D6;
+  color: #333333;
   font-family: 'Roboto', sans-serif;
   overflow-x: hidden;
   margin: 0 auto;
@@ -40,13 +40,16 @@ body {
 }
 
 .start-btn {
-  background-color: #EDA77F;
-  color: #FDF2E3;
+  background-color: #6B705C;
+  color: #FFF0E0;
   padding: 15px 45px;
   border-radius: 20px;
   max-width: 100px;
   font-size: clamp(1rem, 1rem + 0.3rem, 1.3rem);
+}
 
+.start-btn:visited {
+  color: #FFF0E0;
 }
 
 .background-img-wrapper {
@@ -72,11 +75,16 @@ body {
 }
 
 .animal-card {
-  background-color: #EDA77F;
+  background-color: #A5A58D;
   max-width: 240px;
   padding: 5px;
   margin: 5px;
   border-radius: 10px;
+}
+
+.animal-card h2 {
+  font-size: 1.8em;
+  color: #333333;
 }
 
 .hungry {
@@ -86,8 +94,8 @@ body {
 .short-desc {
   align-items: center;
   text-align: center;
-  background-color: #FDF2E3;
-  color: black;
+  background-color: #DDBEA9;
+  color: #333333;
   border-radius: 10px;
   padding: 10px;
   margin: 10px;
@@ -112,6 +120,7 @@ body {
 .arrow {
   position: relative;
   margin-right: 0;
+  margin-bottom: 20px;
 }
 
 button {
@@ -122,32 +131,34 @@ button {
 
 button:disabled,
 button[disabled]{
-  border: 1px solid #999999;
-  background-color: #dbb6bd;
+  border: 1px solid #333333;
+  background-color: #B7B7A7;
   color: #666666;
 }
 
 a:link {
   text-decoration: none;
-  /* transition: transform 0.2s; */
+  color: #FFF0E0;
 }
 
 a:visited {
   text-decoration: none;
-  color: #FDF2E3;
+  color: #333333;
 }
 
 a:hover, button:hover {
   text-decoration: none;
   transform: scale(1.1);
+  color: FFF0E0;
 }
 
 a:active {
   text-decoration: none;
+  color: #333333;
 }
 
 .animal-presentation-wrapper {
-  background-color: #EDA77F;
+  background-color: #A5A58D;
   border-radius: 20px;
   max-width: 500px;
   margin: auto;
@@ -166,7 +177,7 @@ a:active {
 }
 
 .animal-desc {
-  background-color: #FDF2E3;
+  background-color: #DDBEA9;
   border-radius: 20px;
   color: black;
   font-size: 1 rem;
@@ -183,8 +194,8 @@ a:active {
 }
 
 .feed-btn {
-  background-color: #EDA77F;
-  color: #FDF2E3;
+  background-color: #6B705C;
+  color: #FFF0E0;
   padding: 15px 25px;
   border-radius: 10px;
   margin: 20px 0;
@@ -215,7 +226,7 @@ a:active {
 }
 
 .modal-content {
-  background-color: white;
+  background-color: #A5A58D;
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
@@ -232,7 +243,7 @@ a:active {
 
 .modal-content button {
   margin-top: 10px;
-  background-color: #dbb6bd;
+  background-color: #6B705C;
   border: none;
   padding: 2px 16px;
   border-radius: 10px;
@@ -243,11 +254,19 @@ a:active {
   align-items: center;
 }
 
-/* Exempel på hur du kan stylea den större bilden i AnimalCard */
+
 .animal-img-large {
   max-width: 50%;
   max-height: 50vh;
   object-fit: contain;
+}
+
+.not-found {
+  margin: 20px;
+}
+
+.error-number {
+  font-size: 20em;
 }
 
 
@@ -256,7 +275,7 @@ a:active {
     background-color: red;
   }
   50% {
-    background-color: #EDA77F; 
+    background-color: #A5A58D; 
   }
   100% {
     background-color: red;

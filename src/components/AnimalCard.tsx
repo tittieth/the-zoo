@@ -14,8 +14,8 @@ export const AnimalCard = (props: IProps) => {
       <div className="button-wrapper">
         <Link to="/animals">
           <img
-            src="/public/arrow-back.png"
-            height={100}
+            src="/public/arrow-left.png"
+            height={70}
             alt="arrow back"
             className="arrow"
           ></img>
