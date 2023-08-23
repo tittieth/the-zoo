@@ -1,5 +1,7 @@
 # En inlämningsuppgift i kursen Javascript fördjupning. 
 
+## Uppgiftsbeskrivning: 
+
 <h1>The Zoo</h1>
   <p>Använd React med TypeScript för att skapa en sida för ett zoo.</p>
   <p>En lista med djur finns tillgänglig på: <a href="https://animals.azurewebsites.net/api/animals" target="_blank" rel="noopener noreferrer">https://animals.azurewebsites.net/api/animals</a></p>
