@@ -62,4 +62,4 @@
 
 ## Demo 
 
-<img src="/public/mobile (6).gif" width="80%" />
+<img src="/public/mobile (6).gif" width="40%" />
