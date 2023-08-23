@@ -11,6 +11,42 @@ body {
   align-content: center;
 }
 
+button {
+  padding: 0;
+  border: none;
+  cursor: pointer;
+}
+
+button:disabled,
+button[disabled]{
+  border: 1px solid #333333;
+  background-color: #B7B7A7;
+  color: #666666;
+}
+
+a:link {
+  text-decoration: none;
+  color: #FFF0E0;
+}
+
+a:visited {
+  text-decoration: none;
+  color: #333333;
+}
+
+a:hover, button:hover {
+  text-decoration: none;
+  transform: scale(1.1);
+  color: FFF0E0;
+}
+
+a:active {
+  text-decoration: none;
+  color: #333333;
+}
+
+
+/* First page */
 .header-div h1, .firstpage-wrapper h1 {
   font-family: 'Just Another Hand', cursive;;
 }
@@ -65,6 +101,8 @@ body {
   width: 100%;
 }
 
+/* Second page */
+
 .header-div {
   width: 100%;
   display: flex;
@@ -117,44 +155,12 @@ body {
   padding: 0;
 }
 
+/* Third page */
+
 .arrow {
   position: relative;
   margin-right: 0;
   margin-bottom: 20px;
-}
-
-button {
-  padding: 0;
-  border: none;
-  cursor: pointer;
-}
-
-button:disabled,
-button[disabled]{
-  border: 1px solid #333333;
-  background-color: #B7B7A7;
-  color: #666666;
-}
-
-a:link {
-  text-decoration: none;
-  color: #FFF0E0;
-}
-
-a:visited {
-  text-decoration: none;
-  color: #333333;
-}
-
-a:hover, button:hover {
-  text-decoration: none;
-  transform: scale(1.1);
-  color: FFF0E0;
-}
-
-a:active {
-  text-decoration: none;
-  color: #333333;
 }
 
 .animal-presentation-wrapper {
@@ -206,12 +212,7 @@ a:active {
   justify-content: flex-end;
 }
 
-/* Icon second page */
-.cat-icon {
-  margin-bottom: -25px;
-}
-
-/* Modal.css */
+/* Modal */
 
 .modal {
   position: fixed;
@@ -219,7 +220,7 @@ a:active {
   left: 50%;
   width: 60%;
   height: 60%;
-  transform: translate(-50%, -50%); /* Centrera horisontellt och vertikalt */
+  transform: translate(-50%, -50%); 
   display: flex;
   justify-content: center;
   align-items: center;
@@ -260,6 +261,8 @@ a:active {
   max-height: 50vh;
   object-fit: contain;
 }
+
+*/ Not found page */
 
 .not-found {
   margin: 20px;
