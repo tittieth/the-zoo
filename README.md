@@ -59,3 +59,7 @@
 - CSS
 - Prettier
 - Eslint
+
+## Demo 
+
+<img src="/public/mobile (6).gif" width="80%" />
