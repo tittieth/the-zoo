@@ -15,34 +15,26 @@ function Animals() {
     if (animalsFromLS) {
       const parsedAnimals = JSON.parse(animalsFromLS);
       const updatedAnimals = updateIsFedStatus(parsedAnimals);
-      console.log(updatedAnimals);
-      
 
       setAnimals(updatedAnimals);
       saveToLocalStorage(updatedAnimals);
-      
     } else {
-        const getDataFromAPI = async () => {
-          const response = await getAnimals();
-          const updatedAnimals = updateIsFedStatus(response)
-          console.log(updatedAnimals);
-          
+      const getDataFromAPI = async () => {
+        const response = await getAnimals();
+        const updatedAnimals = updateIsFedStatus(response);
 
-          setAnimals(updatedAnimals);
-          saveToLocalStorage(updatedAnimals);    
-        };
-        getDataFromAPI();
-      }
-  }, []);  
-
-  console.log(animals);
-  
+        setAnimals(updatedAnimals);
+        saveToLocalStorage(updatedAnimals);
+      };
+      getDataFromAPI();
+    }
+  }, []);
 
   return (
     <>
       <div>
         <Header />
-        <AnimalList animals={animals}/>
+        <AnimalList animals={animals} />
       </div>
     </>
   );

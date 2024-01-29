@@ -46,8 +46,6 @@ export default function Animal() {
   }, [id]);
 
   const handleImgClick = () => {
-    // Ska kunna se bilden i större format
-    console.log('clicked img');
     setIsModalOpen(true);
   };
 
@@ -83,7 +81,7 @@ export default function Animal() {
       ></AnimalCard>
       {animal && isModalOpen && (
         <ModalImage
-          imageSrc={animal.imageUrl} 
+          imageSrc={animal.imageUrl}
           onClose={() => setIsModalOpen(false)}
         />
       )}
