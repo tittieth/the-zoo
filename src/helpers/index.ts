@@ -3,9 +3,9 @@ import { IAnimal } from '../models/IAnimal';
 export const handleImageError = (
   event: React.SyntheticEvent<HTMLImageElement, Event>,
 ) => {
-  const maxWidth = '500px'; 
+  const maxWidth = '500px';
 
-  event.currentTarget.src = '/244537-P3VK92-904.jpg';
+  event.currentTarget.src = '/public/244537-P3VK92-904.jpg';
   event.currentTarget.alt = 'Bilden kunde inte laddas';
   event.currentTarget.style.maxWidth = maxWidth;
 };
@@ -24,19 +24,19 @@ export const saveToLocalStorage = (animals: IAnimal[]) => {
 export const updateIsFedStatus = (animals: IAnimal[]) => {
   const currentTime = new Date();
 
- return animals.map((animal) => {
+  return animals.map(animal => {
     if (animal) {
       const lastFedTime = new Date(animal.lastFed);
       const timeDifferenceInHours = Math.floor(
-        (currentTime.getTime() - lastFedTime.getTime()) / (1000 * 60 *60)
+        (currentTime.getTime() - lastFedTime.getTime()) / (1000 * 60 * 60),
       );
 
       if (timeDifferenceInHours >= 4) {
-        return { ...animal, isFed: false, hungerLevel: "Håller på att dö" };
+        return { ...animal, isFed: false, hungerLevel: 'Håller på att dö' };
       } else if (timeDifferenceInHours >= 3) {
-        return { ...animal, isFed: false, hungerLevel: "Behöver mat" };
+        return { ...animal, isFed: false, hungerLevel: 'Behöver mat' };
       } else {
-        return { ...animal, isFed: true, hungerLevel: "Mätt" };
+        return { ...animal, isFed: true, hungerLevel: 'Mätt' };
       }
     }
     return animal;
