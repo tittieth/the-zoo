@@ -5,7 +5,7 @@ export const handleImageError = (
 ) => {
   const maxWidth = '500px';
 
-  event.currentTarget.src = '/the-zoo/public/404.jpg';
+  event.currentTarget.src = '/the-zoo/404.jpg';
   event.currentTarget.alt = 'Bilden kunde inte laddas';
   event.currentTarget.style.maxWidth = maxWidth;
 };
